@@ -7,7 +7,6 @@
     and filtering those arrays. 
 */
 
-
 //////////////////PROBLEM 1////////////////////
 /*  
     Create an object called `pizza` that has 6
@@ -30,9 +29,14 @@
     'kids'
 */
 
-//CODE HERE
-
-
+const pizza = {
+  Name: "2 Slice Lunch Special",
+  Price: 3.99,
+  Category: "Quick Eats",
+  Popularity: 100,
+  Rating: 10,
+  Tags: ["Lunch", "Fast", "Easy"],
+};
 
 //////////////////PROBLEM 2////////////////////
 /* 
@@ -42,8 +46,7 @@
     Use dot notation to access the value.
 */
 
-//CODE HERE
-
+console.log(pizza.Popularity);
 
 /*
     Second, log the second tag in your pizza's
@@ -52,8 +55,7 @@
     get the value.
 */
 
-//CODE HERE
-
+console.log(pizza.Tags[1]);
 
 /*
     Third, destructure the price off of the
@@ -62,8 +64,8 @@
     Print the value of your new price variable.
 */
 
-//CODE HERE
-
+pizzaPrice = pizza.Price;
+console.log(pizzaPrice);
 
 /*
     Fourth, and last, destructure the category
@@ -72,8 +74,8 @@
     Print the value of your category variable. 
 */
 
-//CODE HERE
-
+pizzaCat = pizza.Category;
+console.log(pizzaCat);
 
 //////////////////PROBLEM 3////////////////////
 /* 
@@ -87,9 +89,14 @@
     data in some functions that you'll write.
 */
 
-//CODE HERE
-
-
+const tendies = {
+  Name: "Chicken Tenders",
+  Price: 7.99,
+  Category: "Kids Menu",
+  Popularity: 90,
+  Rating: 8,
+  Tags: ["Kids", "Easy"],
+};
 
 //////////////////PROBLEM 4////////////////////
 /* 
@@ -103,11 +110,13 @@
     your food objects has.
 */
 
-//CODE HERE
+const foodArr = [pizza, tendies];
 
-// const filteredFood = foodArr.filter(/* CALLBACK HERE */)
+const filteredFood = foodArr.filter((food) => {
+  return food.Tags.includes("Kids");
+});
 
-
+console.log(filteredFood);
 
 //////////////////PROBLEM 5////////////////////
 /* 
@@ -148,8 +157,7 @@
     Return the filtered array from the entire function
 */
 
-//CODE HERE
-
+const filterByProperty = (property, number, type) => {};
 
 /*
     Invoke the `filterByProperty` function passing
