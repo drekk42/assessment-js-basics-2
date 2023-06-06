@@ -7,7 +7,6 @@
     creating customer objects.  
 */
 
-
 //////////////////PROBLEM 1////////////////////
 /*  
     Below is a cart array that has food objects
@@ -19,24 +18,25 @@
 */
 
 const cart = [
-    {
-        name: 'pizza', 
-        price: 9.99
-    }, 
-    {
-        name: 'pasta', 
-        price: 8.99
-    }, 
-    {
-        name: 'salad', 
-        price: 7.99
-    }
-]
+  {
+    name: "pizza",
+    price: 9.99,
+  },
+  {
+    name: "pasta",
+    price: 8.99,
+  },
+  {
+    name: "salad",
+    price: 7.99,
+  },
+];
 
-//CODE HERE
+const summedPrice = cart.reduce((total, food) => {
+  return total + food.price;
+}, 0);
 
-// const summedPrice = cart.reduce(/* CALLBACK HERE */)
-
+console.log(summedPrice);
 
 //////////////////PROBLEM 2////////////////////
 /*  
@@ -53,9 +53,11 @@ const cart = [
     decimals, for example: .06 for a 6% tax.
 */
 
-//CODE HERE
+const calcFinalPrice = (cartTotal, couponValue, tax) => {
+  return (cartTotal * (1 + tax) - couponValue).toFixed(2);
+};
 
-
+console.log(calcFinalPrice(48.71, 5, 0.06));
 
 //////////////////PROBLEM 3////////////////////
 /*  
@@ -78,7 +80,7 @@ const cart = [
 */
 
 /*
-    TEXT ANSWER HERE
+    I decided on five different variables. firstName and lastName, both strings, for easy user identification; email, another string, so that the restaurant can send out deals and promotions; phoneNumber, a number, for text promotions; and birthday, a number, so that the user can get a special coupon on their birthday.
 
 */
 
@@ -87,4 +89,10 @@ const cart = [
     guidelines.
 */
 
-//CODE HERE
+const customer = {
+  firstName: "Nicholas",
+  lastName: "Kretzmer",
+  email: "kretzmer42@devmonta.in",
+  phoneNumber: 3864253612,
+  birthday: 09191996,
+};

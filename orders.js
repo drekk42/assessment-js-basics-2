@@ -6,7 +6,6 @@
     to make tickets from order information.
 */
 
-
 //////////////////PROBLEM 1////////////////////
 /*  
     Create a new class called `Ticket`.
@@ -29,9 +28,27 @@
     stored on the object.
 */
 
-//CODE HERE
+class Ticket {
+  constructor(items, orderTime, customerId) {
+    (this.items = items),
+      (this.orderTime = orderTime),
+      (this.customerId = customerId),
+      (this.status = "Queued");
+  }
 
+  updateStatus(str, customerId) {
+    this.status = str;
+    console.log(`The order for ${customerId} is now ${str}`);
+  }
+}
 
+const nickTick = new Ticket(["Burger", "Fries"], "1:10pm", 42);
+
+console.log(nickTick);
+
+nickTick.updateStatus("ready for pickup", nickTick.customerId);
+
+console.log(nickTick);
 
 /*
     Create a new instance of your class.
@@ -44,8 +61,8 @@
     customer: 575
 */
 
-//CODE HERE
-
+const firstTicket = new Ticket(["Pizza", "Bread", "Soda"], "7:03pm", 575);
+console.log(firstTicket);
 
 /*
     Call the `updateStatus` method on
@@ -53,4 +70,5 @@
     'cooking'
 */
 
-//CODE HERE
+firstTicket.updateStatus("cooking", firstTicket.customerId);
+console.log(firstTicket);
